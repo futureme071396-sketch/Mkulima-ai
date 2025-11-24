@@ -1,0 +1,197 @@
+name: mkulima_ai
+description: AI-Powered Plant Disease Detection for Kenyan Farmers
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # === CORE FUNCTIONALITY ===
+  http: ^1.0.0
+  dio: ^5.0.0
+  
+  # === CAMERA & MEDIA ===
+  camera: ^0.10.0
+  image_picker: ^1.0.0
+  image: ^4.0.0
+  photo_view: ^0.14.0
+  image_cropper: ^5.0.0
+  
+  # === LOCAL STORAGE ===
+  shared_preferences: ^2.0.0
+  sqflite: ^2.0.0
+  path_provider: ^2.0.0
+  hive: ^2.0.0
+  hive_flutter: ^1.0.0
+  
+  # === TEXT-TO-SPEECH & AUDIO ===
+  flutter_tts: ^3.0.0
+  audioplayers: ^5.0.0
+  
+  # === AI/ML ===
+  tflite_flutter: ^0.10.0
+  camera_platform_interface: ^2.0.0
+  
+  # === STATE MANAGEMENT ===
+  provider: ^6.0.0
+  flutter_hooks: ^0.18.0
+  get: ^4.0.0
+  riverpod: ^2.0.0
+  
+  # === UI COMPONENTS ===
+  cupertino_icons: ^1.0.0
+  flutter_vector_icons: ^2.0.0
+  carousel_slider: ^4.0.0
+  shimmer: ^2.0.0
+  loading_animation_widget: ^1.0.0
+  badges: ^3.0.0
+  flutter_staggered_animations: ^1.0.0
+  
+  # === NAVIGATION & ROUTING ===
+  go_router: ^12.0.0
+  auto_route: ^7.0.0
+  
+  # === FORMS & VALIDATION ===
+  flutter_form_builder: ^8.0.0
+  form_validator: ^1.0.0
+  
+  # === NETWORK & CONNECTIVITY ===
+  connectivity_plus: ^5.0.0
+  internet_connection_checker: ^1.0.0
+  
+  # === LOCATION & MAPS ===
+  geolocator: ^11.0.0
+  google_maps_flutter: ^2.0.0
+  
+  # === UTILITIES ===
+  intl: ^0.18.0
+  url_launcher: ^6.0.0
+  package_info_plus: ^5.0.0
+  device_info_plus: ^9.0.0
+  permission_handler: ^11.0.0
+  flutter_local_notifications: ^16.0.0
+  timeago: ^3.0.0
+  
+  # === ANIMATIONS ===
+  lottie: ^2.0.0
+  simple_animations: ^5.0.0
+  
+  # === CHARTS & GRAPHS ===
+  fl_chart: ^0.60.0
+  charts_flutter: ^0.12.0
+  
+  # === TESTING & MOCKING ===
+  mockito: ^5.0.0
+  fake_async: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  build_runner: ^2.0.0
+  hive_generator: ^1.0.0
+  json_serializable: ^6.0.0
+  injectable: ^2.0.0
+
+# === COMPLETE ASSETS CONFIG ===
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/images/
+    - assets/images/plants/
+    - assets/images/diseases/
+    - assets/images/icons/
+    - assets/images/backgrounds/
+    - assets/models/
+    - assets/models/tflite/
+    - assets/models/tensorflow/
+    - assets/labels/
+    - assets/labels/diseases/
+    - assets/labels/plants/
+    - assets/sounds/
+    - assets/sounds/notifications/
+    - assets/sounds/voice/
+    - assets/animations/
+    - assets/translations/
+    - assets/fonts/
+    - assets/data/
+    - assets/config/
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
+
+  # === PLUGIN CONFIGS ===
+  plugins:
+    camera:
+      platforms:
+        android:
+          enableAudio: false
+        ios:
+          enableAudio: false
+    
+    image_picker:
+      platforms:
+        android:
+          useAndroidX: true
+        ios:
+          cameraPermission: "Allow $(PRODUCT_NAME) to access your camera"
+          photoLibraryPermission: "Allow $(PRODUCT_NAME) to access your photos"
+    
+    flutter_tts:
+      platforms:
+        android:
+          useAndroidX: true
+    
+    sqflite:
+      platforms:
+        android:
+          package: "com.tekartik.sqflite"
+          pluginClass: "SqflitePlugin"
+    
+    geolocator:
+      platforms:
+        android:
+          permission: "Allow $(PRODUCT_NAME) to access your location"
+        ios:
+          permission: "Allow $(PRODUCT_NAME) to access your location"
+    
+    google_maps_flutter:
+      platforms:
+        android:
+          apiKey: "[ANDROID_API_KEY]"
+        ios:
+          apiKey: "[IOS_API_KEY]"
+
+# === GENERATED FILES CONFIG ===
+flutter_gen:
+  output: lib/gen/
+  line_length: 80
+  
+  integrations:
+    flutter_svg: true
+    flare_flutter: true
+
+# === DEPENDENCY OVERRIDES (if needed) ===
+dependency_overrides:
+  # Add any necessary overrides here
