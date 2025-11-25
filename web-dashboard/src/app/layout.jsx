@@ -1,17 +1,16 @@
-import '../styles/globals.css';
-import { AuthProvider } from '../context/AuthContext';
+'use client' // Must be client because we use AuthProvider
 
-export const metadata = {
-  title: 'Mkulima AI Dashboard',
-  description: 'Admin dashboard for plant disease detection platform',
-};
+import '../styles/globals.css'
+import { AuthProvider } from '../context/AuthContext'
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="bg-gray-50">
-        <AuthProvider>{children}</AuthProvider>
-      </body>
-    </html>
-  );
+    <AuthProvider>
+      <html lang="en">
+        <body className="bg-gray-50">
+          {children}
+        </body>
+      </html>
+    </AuthProvider>
+  )
 }
